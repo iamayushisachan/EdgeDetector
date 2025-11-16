@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edge Detection Viewer</title>
+</head>
+<body>
+<h2>Processed Frame Viewer</h2>
+<img id="out" width="300">
+<script>
+fetch("sample_frame.txt")
+  .then(r => r.text())
+  .then(b64 => {
+    document.getElementById("out").src = "data:image/png;base64," + b64.trim();
+  });
+</script>
+</body>
+</html>
